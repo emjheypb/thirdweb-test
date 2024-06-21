@@ -1,10 +1,21 @@
-import Image from "next/image";
-import { ConnectButton } from "thirdweb/react";
-import thirdwebIcon from "@public/thirdweb.svg";
+import ContractCard from "@/components/contract-cards";
+import {
+  COIN_FLIP_CONTRACT_ADDRESS,
+  MESSAGE_BOARD_CONTRACT_ADDRESS,
+  PROFILE_STATUS_CONTRACT_ADDRESS,
+  TIP_JAR_CONTRACT_ADDRESS,
+} from "@/constants/addresses";
+
+const contracts = [
+  { href: "/", address: TIP_JAR_CONTRACT_ADDRESS },
+  { href: "/", address: COIN_FLIP_CONTRACT_ADDRESS },
+  { href: "/", address: PROFILE_STATUS_CONTRACT_ADDRESS },
+  { href: "/", address: MESSAGE_BOARD_CONTRACT_ADDRESS },
+];
 
 export default function Home() {
   return (
-    <main className="p-4 min-h-[100vh] flex container max-w-screen mx-auto">
+    <div className="p-4 min-h-[100vh] flex container max-w-screen mx-auto">
       <div className="py-10">
         <h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
           My{" "}
@@ -12,9 +23,17 @@ export default function Home() {
             Contracts
           </span>
         </h1>
-        <div className="flex justify-center mb-20"></div>
+        <div className="flex mb-20 gap-10 flex-wrap">
+          {contracts.map((contract) => (
+            <ContractCard
+              href={contract.href}
+              constractAddress={contract.address}
+              key={contract.address}
+            />
+          ))}
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 

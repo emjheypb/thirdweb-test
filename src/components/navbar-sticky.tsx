@@ -26,7 +26,7 @@ const StickyNavbar = () => {
   });
 
   return (
-    <nav className={``}>
+    <nav className={`z-10`}>
       {/* {y} */}
       <div
         className={`hidden md:flex px-5 transition duration-500 ${
