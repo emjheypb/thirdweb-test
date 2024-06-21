@@ -30,8 +30,10 @@ const StickyNavbar = () => {
       {/* {y} */}
       <div
         className={`hidden md:flex px-5 transition duration-500 ${
-          isSticky ? "shadow-xl bg-white/50" : "shadow-none bg-gradient-to-b"
-        } to-transparent from-white/75 fixed min-w-full gap-2 items-center justify-between`}
+          isSticky
+            ? "shadow-xl bg-white/50 text-slate-700"
+            : "shadow-none bg-gradient-to-b"
+        } to-transparent from-white/75 fixed min-w-full gap-2 items-center justify-between `}
       >
         <div className="flex items-center">
           <Logo />

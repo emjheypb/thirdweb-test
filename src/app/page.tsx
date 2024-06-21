@@ -7,16 +7,16 @@ import {
 } from "@/constants/addresses";
 
 const contracts = [
-  { href: "/", address: TIP_JAR_CONTRACT_ADDRESS },
-  { href: "/", address: COIN_FLIP_CONTRACT_ADDRESS },
-  { href: "/", address: PROFILE_STATUS_CONTRACT_ADDRESS },
-  { href: "/", address: MESSAGE_BOARD_CONTRACT_ADDRESS },
+  { href: "/tipjar", address: TIP_JAR_CONTRACT_ADDRESS },
+  { href: "/coinflip", address: COIN_FLIP_CONTRACT_ADDRESS },
+  { href: "/profilestatus", address: PROFILE_STATUS_CONTRACT_ADDRESS },
+  { href: "/messageboard", address: MESSAGE_BOARD_CONTRACT_ADDRESS },
 ];
 
 export default function Home() {
   return (
     <div className="p-4 min-h-[100vh] flex container max-w-screen mx-auto">
-      <div className="py-10">
+      <div className="">
         <h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
           My{" "}
           <span className="inline-block -skew-x-6 text-blue-500">

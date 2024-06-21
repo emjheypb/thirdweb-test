@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { ImagePlaceholderSVG } from "./images";
 import { client } from "@/app/client";
-import { getContract, readContract } from "thirdweb";
+import { getContract } from "thirdweb";
 import { avalancheFuji } from "thirdweb/chains";
 import { MediaRenderer } from "thirdweb/react";
 import { getContractMetadata } from "thirdweb/extensions/common";

@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThirdwebProvider>
           <StickyNavbar />
-          <main className="pt-12">{children}</main>
+          <main className="pt-20">{children}</main>
         </ThirdwebProvider>
       </body>
     </html>
