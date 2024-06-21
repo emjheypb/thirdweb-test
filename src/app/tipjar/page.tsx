@@ -14,7 +14,7 @@ const TipJar = async () => {
   const metadata = await getContractMetadata({ contract: contract });
 
   return (
-    <div className="py-10 px-20">
+    <div className="md:py-10 p-14 md:px-20">
       <HeroCard
         isLoading={false}
         title={metadata.name}

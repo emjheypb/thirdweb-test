@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 import StickyNavbar from "@/components/navbar-sticky";
+import MobileNavbar from "@/components/navbar-mobile";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThirdwebProvider>
           <StickyNavbar />
-          <main className="pt-20">{children}</main>
+          <MobileNavbar />
+          <main className="md:pt-20">{children}</main>
         </ThirdwebProvider>
       </body>
     </html>

@@ -19,7 +19,7 @@ const ContractCard = async (props: CardProps) => {
   const metadata = await getContractMetadata({ contract: contract });
 
   return (
-    <div className="bg-slate-900 rounded-lg transition w-96 hover:bg-slate-700">
+    <div className="bg-slate-900 rounded-lg transition md:w-96 sm:w-44 w-full hover:bg-slate-700">
       <Link href={props.href}>
         <MediaRenderer
           src={metadata?.image}
