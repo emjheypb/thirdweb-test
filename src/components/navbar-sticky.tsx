@@ -14,7 +14,7 @@ const StickyNavbar = () => {
 
   const handleStickyNavbar = () => {
     // setY(window.scrollY);
-    if (window.scrollY >= 150) {
+    if (window.scrollY >= 25) {
       setSticky(true);
     } else {
       setSticky(false);
@@ -31,7 +31,7 @@ const StickyNavbar = () => {
       <div
         className={`hidden md:flex px-5 transition duration-500 ${
           isSticky
-            ? "shadow-xl bg-white/50 text-slate-700"
+            ? "shadow-xl bg-white text-slate-700"
             : "shadow-none bg-gradient-to-b"
         } to-transparent from-white/75 fixed min-w-full gap-2 items-center justify-between `}
       >

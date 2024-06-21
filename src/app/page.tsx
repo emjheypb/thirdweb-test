@@ -17,12 +17,9 @@ export default function Home() {
   return (
     <div className="p-4 min-h-[100vh] flex container max-w-screen mx-auto">
       <div className="">
-        <h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
-          My{" "}
-          <span className="inline-block -skew-x-6 text-blue-500">
-            Contracts
-          </span>
-        </h1>
+        <div className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
+          My <span className="text-blue-500">Contracts</span>
+        </div>
         <div className="flex mb-20 gap-10 flex-wrap">
           {contracts.map((contract) => (
             <ContractCard
