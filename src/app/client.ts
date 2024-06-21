@@ -10,5 +10,5 @@ if (!clientId) {
 }
 
 export const client = createThirdwebClient({
-  secretKey: secretKey,
+  secretKey: secretKey as string,
 });
