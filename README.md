@@ -1,4 +1,3 @@
-
 ![tw-banner](https://github.com/thirdweb-example/next-starter/assets/57885104/20c8ce3b-4e55-4f10-ae03-2fe4743a5ee8)
 
 # thirdweb-next-starter
@@ -17,9 +16,9 @@ Install the template using [thirdweb create](https://portal.thirdweb.com/cli/cre
 
 To run this project, you will need to add the following environment variables to your .env file:
 
-`CLIENT_ID`
+`SECRET_KEY`
 
-To learn how to create a client ID, refer to the [client documentation](https://portal.thirdweb.com/typescript/v5/client). 
+To learn how to create a client ID, refer to the [client documentation](https://portal.thirdweb.com/typescript/v5/client).
 
 ## Run locally
 
