@@ -1,14 +1,15 @@
 import { client } from "@/app/client";
-import { MediaRenderer } from "thirdweb/react";
+import { ConnectButton, MediaRenderer, useActiveAccount } from "thirdweb/react";
 
 type HeroCardProps = {
-  isLoading: boolean;
   title: string;
   description: string;
   image: string;
 };
 
 const HeroCard = (props: HeroCardProps) => {
+  const account = useActiveAccount();
+
   return (
     <div className="bg-slate-900 rounded-lg transition max-w-full md:h-96 flex flex-col md:flex-row items-center">
       <MediaRenderer
@@ -22,6 +23,7 @@ const HeroCard = (props: HeroCardProps) => {
       <div className="p-4 md:px-4 flex gap-5 flex-col">
         <h1 className="text-5xl font-bold text-blue-500">{props.title}</h1>
         <p className="text-xl">{props.description}</p>
+        {!account && <ConnectButton client={client} />}
       </div>
     </div>
   );
