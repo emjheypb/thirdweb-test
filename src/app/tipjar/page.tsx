@@ -136,10 +136,8 @@ const TipJar = () => {
         [...contractEvents].reverse().map((event, index) => (
           <div key={index} className="">
             <p>
-              {typeof event.args.tipper === "string" &&
-                truncateWallet(event.args.tipper)}{" "}
-              {typeof event.args.amount === "bigint" &&
-                toEther(Number(event.args.amount))}
+              {truncateWallet(event.args.tipper as string)}{" "}
+              {toEther(Number(event.args.amount as bigint))}
             </p>
           </div>
         ))}
