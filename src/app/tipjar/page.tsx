@@ -33,6 +33,15 @@ const TipJar = () => {
   const { data: contractEvents, refetch: refetchContractEvents } =
     useContractEvents({ contract: tipjarContract });
 
+  const truncateWallet = (address: string) => {
+    return `${address.slice(0, 6)}...${address.slice(-4)}`;
+  };
+
+  const convertDate = (timestamp: bigint) => {
+    const timestampNumber = Number(timestamp);
+    return new Date(timestampNumber * 1000).toLocaleString();
+  };
+
   useEffect(() => {
     const fetchMetadata = async () => {
       console.log("fetchMetadata");
@@ -81,6 +90,7 @@ const TipJar = () => {
                 onTransactionConfirmed={() => {
                   setTipAmount(0);
                   refetchTipjarBalance();
+                  refetchContractEvents();
                 }}
               >
                 Give Tip
@@ -111,6 +121,7 @@ const TipJar = () => {
                   }
                   onTransactionConfirmed={() => {
                     refetchTipjarBalance();
+                    refetchContractEvents();
                   }}
                 >
                   Empty Tip Jar
@@ -120,6 +131,16 @@ const TipJar = () => {
           </div>
         </div>
       )}
+      {contractEvents &&
+        contractEvents.length > 0 &&
+        [...contractEvents].reverse().map((event, index) => (
+          <div key={index} className="">
+            <p>
+              {truncateWallet(event.args.tipper as string)}{" "}
+              {toEther(Number(event.args.amount as bigint))}
+            </p>
+          </div>
+        ))}
     </div>
   );
 };
